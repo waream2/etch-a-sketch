@@ -2,14 +2,62 @@
 
 <head>
     <title> Earn's Etch-a-Sketch</title>
+    <link rel = "stylesheet" href = "styles.css" />
 </head>
 
 <body>
-    <div id="container">
-    </div>
+
+    <div><h1>Earn's Etch-a-Sketch</h1></div>
+    <div id= "container"></div>
+    <button id="reset-button">Reset</button>
 </body>
 
 <script>
-</script>
 
+    //creates the grid element for the boxes to live inside and appends it to the container
+
+    container = document.querySelector('#container');
+    grid = document.createElement('div');
+    grid.classList.add('grid');
+    container.appendChild(grid);
+
+    // creates a variable out of the reset button
+
+    let resetButton = document.querySelector('#reset-button');
+
+    // loads initial grid
+
+    createRows(16, 16);
+
+    // updates to new grid if the user clicks reset
+
+    resetButton.addEventListener("click", function() {
+            removeAllChildNodes(grid);
+            entry = prompt('Set Grid Size', '16');
+            grid.style.setProperty('grid-template-columns', 'repeat(' + parseInt(entry) + ', 1fr)');
+            grid.style.setProperty('grid-template-rows', 'repeat(' + parseInt(entry) + ', 1fr)');
+            createRows(parseInt(entry), parseInt(entry));
+        });
+   
+    // creates the grid by adding a set amount of boxes to fill the grid element
+
+    function createRows(width, height) {
+        for (let i = 0; i < width*height; i++) {
+            let box = document.createElement('div');
+            box.classList.add('box');
+            grid.appendChild(box);
+            box.addEventListener('mouseenter', function() {
+                event.target.style.backgroundColor = 'black';
+            });        
+        };
+    };
+
+    // used to remove the boxes from the current grid when reset button is hit
+
+    function removeAllChildNodes(parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+    }
+}
+</script>
 </html>
