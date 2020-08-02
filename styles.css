@@ -9,9 +9,9 @@ body {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
-    height: 2400px;
-    width: 2400px;
-    padding-top: 75px; 
+    height: 600px;
+    width: 600px;
+    padding-top: 45px; 
      
 }
 .box {
@@ -21,16 +21,16 @@ body {
     
 }
 #reset-button {
-    margin-top: 200px;
-    border-radius: 20px;
-    font-size: 100px;
-    padding: 25px;
+    margin-top: 45px;
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 10px;
     background-color: white;
     margin-bottom: 20px;
 }
 h1 {
-    font-size: 100px;
-    margin-top: 200px;
+    font-size: 40px;
+    margin-top: 50px;
     color: gold;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
